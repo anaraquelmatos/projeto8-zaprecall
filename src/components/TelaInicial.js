@@ -5,7 +5,7 @@ function TelaInicial() {
     const [visivel, setVisivel] = React.useState(true);
 
     return visivel ? (
-        <section className=" tela tela-inicial">
+        <section className=" tela-fixa tela-inicial">
             <img src="assets/img/logo.png" alt="Logo ZapRecall" />
             <h1>ZapRecall</h1>
             <button onClick={() => setVisivel(false)}>Iniciar Recall!</button>
@@ -14,5 +14,6 @@ function TelaInicial() {
         <></>
     );
 }
+
 
 export default TelaInicial;

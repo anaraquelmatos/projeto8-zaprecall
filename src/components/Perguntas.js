@@ -1,47 +1,59 @@
-import Pergunta from "./Pergunta";
+import PerguntasEstados from "./PerguntasEstados";
 
 const perguntas = [
     {
-        pergunta: "Pergunta 1"
+        pergunta: "O que é JSX?",
+        resposta: "Uma extensão de linguagem do JavaScript"
+
     },
     {
-        pergunta: "Pergunta 2"
+        pergunta: "O React é __",
+        resposta: "Uma biblioteca JavaScript para construção de interfaces"
     },
     {
-        pergunta: "Pergunta 3"
+        pergunta: "Componentes devem iniciar com __",
+        resposta: "Letra maiúscula"
     },
     {
-        pergunta: "Pergunta 4"
+        pergunta: "Podemos colocar __ dentro do JSX",
+        resposta: "Expressões"
     },
     {
-        pergunta: "Pergunta 5"
+        pergunta: "O ReactDOM nos ajuda __",
+        resposta: "Interagindo com a DOM para colocar componentes React na mesma"
     },
     {
-        pergunta: "Pergunta 6"
+        pergunta: "Usamos o npm para __",
+        resposta: "Gerenciar os pacotes necessários e suas dependências"
     },
     {
-        pergunta: "Pergunta 7"
+        pergunta: "Usamos props para __",
+        resposta: "Passar diferentes informações para componentes"
     },
     {
-        pergunta: "Pergunta 8"
+        pergunta: "Usamos estado (state) para __ ",
+        resposta: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
     }
 
 ];
 
+
 function Perguntas() {
 
     return (
-        <main>
-            <div className="caixa-pergunta">
+        <>
+            <main className="main">
                 {
-                    perguntas.map((card) => {
-                        return <Pergunta key={card.pergunta} pergunta={card.pergunta} />;
+                    perguntas.map((card, index) => {
+
+                        return <PerguntasEstados index={index + 1} descricao={card.pergunta} resposta={card.resposta} key={card.pergunta} />
                     })
                 }
-            </div>
-        </main>
+            </main >
+        </>
     );
-
 }
+
+
 
 export default Perguntas;
