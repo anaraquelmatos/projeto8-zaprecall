@@ -2,6 +2,8 @@ import Perguntas from "./Perguntas";
 import Cabecalho from "./Cabecalho";
 import Rodape from "./Rodape";
 import {useState} from "react";
+import "../css/style.css";
+import "../css/reset.css";
 
 function FlashCards() {
 

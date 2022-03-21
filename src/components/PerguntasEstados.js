@@ -1,4 +1,7 @@
 import { useState } from "react";
+import "../css/style.css";
+import "../css/reset.css";
+import setinha from "../assets/img/setinha.png";
 
 function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTotal, setIcon, setTexto, setComplemento }) {
 
@@ -22,7 +25,7 @@ function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTota
             <div className="caixa-pergunta-visivel">
                 <p className="pergunta">{descricao}</p>
                 <div className="caixa-pergunta-visivel-seta">
-                    <img src="assets/img/setinha.png" alt="Próxima etapa" onClick={() => setEstado("botoes")} />
+                    <img src={setinha} alt="Próxima etapa" onClick={() => setEstado("botoes")} />
                 </div>
             </div>
         );

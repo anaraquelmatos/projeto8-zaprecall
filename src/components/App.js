@@ -1,6 +1,7 @@
 import TelaInicial from "./TelaInicial";
 import FlashCards from "./FlashCards";
 
+
 function App() {
     return (
         <>

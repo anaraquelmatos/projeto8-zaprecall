@@ -1,5 +1,6 @@
 import PerguntasEstados from "./PerguntasEstados";
-import Rodape from "./Rodape";
+import "../css/style.css";
+import "../css/reset.css";
 
 const perguntas = [
     {
@@ -57,7 +58,6 @@ function Perguntas({ total, setTotal, setIcon, setTexto, setComplemento }) {
                     })
                 }
             </main >
-            <Rodape />
 
         </>
     );

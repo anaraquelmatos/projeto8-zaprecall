@@ -1,3 +1,7 @@
+import "../css/style.css";
+import "../css/reset.css";
+import party from "../assets/img/party.png";
+import sad from "../assets/img/sad.png";
 const vetor = [];
 let cont = 0;
 let img;
@@ -19,13 +23,13 @@ function Rodape({ total, icon, texto, complemento }) {
 
     }
     if (cont === 0 && total === 8) {
-        img = <img src="assets/img/party.png" alt="Putz" />;
+        img = <img src={party} alt="Putz" />;
         complemento = `Parabéns!`
         texto = `
         Você não esqueceu de nenhum 
         flashcard!`
     } else if (cont !== 0 && total === 8){
-        img = <img src="assets/img/sad.png" alt="Putz" />;
+        img = <img src={sad} alt="Putz" />;
         complemento = `Putz...`
         texto = `
         Ainda faltam alguns...
@@ -35,7 +39,7 @@ function Rodape({ total, icon, texto, complemento }) {
 
 return (
 
-    <footer>
+    <footer className="rodape">
         <div className="rodape-conteudo espaco">
         <div className="rodape-mensagem-final espaco negrito">{img} {complemento}</div>
                 <div className="rodape-mensagem-final espaco">{texto}</div>
