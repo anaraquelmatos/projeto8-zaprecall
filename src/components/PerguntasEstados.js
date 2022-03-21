@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTotal, setIcon, setTexto }) {
+function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTotal, setIcon, setTexto, setComplemento }) {
 
     const [estado, setEstado] = useState("visivel");
     const [selecionado, setSelecionado] = useState(false);
@@ -31,28 +31,31 @@ function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTota
             <div className="caixa-pergunta-final">
                 <p className="pergunta">{resposta}</p>
                 <div className="caixa-pergunta-visivel-botoes" >
-                    <div className="botao-vermelho" onClick={() => setEstado("fechadoVermelho")}>
+                    <div onClick={() => setEstado("fechadoVermelho")}>
                         <button className={vermelho} onClick={() => {
                             setSelecionado(!selecionado)
                             setTotal(total + 1)
                             setIcon("vermelho")
                             setTexto()
+                            setComplemento()
                         }}>Não lembrei</button>
                     </div>
-                    <div className="botao-alaranjado" onClick={() => setEstado("fechadoLaranja")}>
+                    <div onClick={() => setEstado("fechadoLaranja")}>
                         <button className={laranja} onClick={() => {
                             setSelecionado(!selecionado)
                             setTotal(total + 1)
                             setIcon("laranja")
                             setTexto()
+                            setComplemento()
                         }}>Quase não lembrei</button>
                     </div>
-                    <div className="botao-verde" onClick={() => setEstado("fechadoVerde")}>
+                    <div onClick={() => setEstado("fechadoVerde")}>
                         <button className={verde} onClick={() => {
                             setSelecionado(!selecionado)
                             setTotal(total + 1)
                             setIcon("verde")
                             setTexto()
+                            setComplemento()
                         }}>Zap!</button>
                     </div>
                 </div>

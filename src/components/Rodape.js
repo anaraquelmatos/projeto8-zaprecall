@@ -2,7 +2,7 @@ const vetor = [];
 let cont = 0;
 let img;
 
-function Rodape({ total, icon, texto }) {
+function Rodape({ total, icon, texto, complemento }) {
 
     if (icon === "vermelho") {
 
@@ -20,28 +20,25 @@ function Rodape({ total, icon, texto }) {
     }
     if (cont === 0 && total === 8) {
         img = <img src="assets/img/party.png" alt="Putz" />;
+        complemento = `Parabéns!`
         texto = `
-        Parabéns!
         Você não esqueceu de nenhum 
         flashcard!`
     } else if (cont !== 0 && total === 8){
         img = <img src="assets/img/sad.png" alt="Putz" />;
+        complemento = `Putz...`
         texto = `
-        Putz...
         Ainda faltam alguns...
-        Mas não desanime!`
-
+        Mas não desanime!
+        `
     }
-
 
 return (
 
     <footer>
-        <div className="rodape-conteudo">
-            <div>
-                {img}
-                {texto}
-            </div>
+        <div className="rodape-conteudo espaco">
+        <div className="rodape-mensagem-final espaco negrito">{img} {complemento}</div>
+                <div className="rodape-mensagem-final espaco">{texto}</div>
             <p>{total}/8 CONCLUÍDOS</p>
             <div>
                 {vetor}

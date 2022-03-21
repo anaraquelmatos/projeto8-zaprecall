@@ -40,12 +40,12 @@ const perguntas = [
 
 perguntas.sort(Baralho);
 
-function Baralho(){
+function Baralho() {
     return Math.random() - 0.5;
 }
 
 
-function Perguntas({total, setTotal, setIcon, setTexto}) {
+function Perguntas({ total, setTotal, setIcon, setTexto, setComplemento }) {
 
     return (
         <>
@@ -53,11 +53,11 @@ function Perguntas({total, setTotal, setIcon, setTexto}) {
                 {
                     perguntas.map((card, index) => {
 
-                        return <PerguntasEstados index={index + 1} descricao={card.pergunta} resposta={card.resposta} key={card.pergunta} total={total} setTotal={setTotal} setIcon={setIcon} setTexto={setTexto}/>
+                        return <PerguntasEstados index={index + 1} descricao={card.pergunta} resposta={card.resposta} key={card.pergunta} total={total} setTotal={setTotal} setIcon={setIcon} setTexto={setTexto} setComplemento={setComplemento} />
                     })
                 }
             </main >
-            <Rodape/>
+            <Rodape />
 
         </>
     );

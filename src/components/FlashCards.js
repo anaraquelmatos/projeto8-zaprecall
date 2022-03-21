@@ -8,14 +8,15 @@ function FlashCards() {
     const [total, setTotal] = useState(0);
     const [icon, setIcon] = useState("");
     const [texto, setTexto] = useState("");
+    const [complemento, setComplemento] = useState("");
 
     return (
         <>
             <Cabecalho />
             <div className="tela">
-                <Perguntas total={total} setTotal={setTotal} setIcon={setIcon} setTexto={setTexto}/>
+                <Perguntas total={total} setTotal={setTotal} setIcon={setIcon} setTexto={setTexto} setComplemento={setComplemento}/>
             </div>
-            <Rodape total={total} icon={icon} texto={texto}/>
+            <Rodape total={total} icon={icon} texto={texto} complemento={complemento}/>
         </>
     );
 
