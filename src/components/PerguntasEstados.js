@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTotal }) {
+function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTotal, setIcon, setTexto }) {
 
     const [estado, setEstado] = useState("visivel");
     const [selecionado, setSelecionado] = useState(false);
@@ -35,32 +35,43 @@ function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTota
                         <button className={vermelho} onClick={() => {
                             setSelecionado(!selecionado)
                             setTotal(total + 1)
+                            setIcon("vermelho")
+                            setTexto()
                         }}>Não lembrei</button>
                     </div>
                     <div className="botao-alaranjado" onClick={() => setEstado("fechadoLaranja")}>
                         <button className={laranja} onClick={() => {
                             setSelecionado(!selecionado)
                             setTotal(total + 1)
+                            setIcon("laranja")
+                            setTexto()
                         }}>Quase não lembrei</button>
                     </div>
                     <div className="botao-verde" onClick={() => setEstado("fechadoVerde")}>
                         <button className={verde} onClick={() => {
                             setSelecionado(!selecionado)
                             setTotal(total + 1)
+                            setIcon("verde")
+                            setTexto()
                         }}>Zap!</button>
                     </div>
                 </div>
             </div>
         );
     } else if (estado === "fechadoVermelho") {
+        
         return (
+
             <div className="caixa-pergunta-linha-vermelha" >
                 <h3>{pergunta} {index}</h3>
                 <ion-icon name="close-circle"></ion-icon>
             </div>
         );
     } else if (estado === "fechadoLaranja") {
+
+
         return (
+
             <div className="caixa-pergunta-linha-alaranjado">
                 <h3>{pergunta} {index}</h3>
                 <ion-icon name="help-circle"></ion-icon>
@@ -68,7 +79,9 @@ function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTota
         );
     }
     else if (estado === "fechadoVerde") {
+        const iconVerde = <ion-icon name="checkmark-circle"></ion-icon>;
         return (
+
             <div className="caixa-pergunta-linha-verde">
                 <h3>{pergunta} {index}</h3>
                 <ion-icon name="checkmark-circle"></ion-icon>
