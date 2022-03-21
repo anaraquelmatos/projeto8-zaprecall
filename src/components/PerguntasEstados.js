@@ -79,7 +79,7 @@ function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTota
         );
     }
     else if (estado === "fechadoVerde") {
-        const iconVerde = <ion-icon name="checkmark-circle"></ion-icon>;
+
         return (
 
             <div className="caixa-pergunta-linha-verde">

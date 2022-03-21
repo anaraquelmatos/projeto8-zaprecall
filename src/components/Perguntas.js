@@ -38,6 +38,12 @@ const perguntas = [
 
 ];
 
+perguntas.sort(Baralho);
+
+function Baralho(){
+    return Math.random() - 0.5;
+}
+
 
 function Perguntas({total, setTotal, setIcon, setTexto}) {
 
