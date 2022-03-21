@@ -1,4 +1,6 @@
 import PerguntasEstados from "./PerguntasEstados";
+import Rodape from "./Rodape";
+import {useState} from "react";
 
 const perguntas = [
     {
@@ -38,7 +40,7 @@ const perguntas = [
 ];
 
 
-function Perguntas() {
+function Perguntas({total, setTotal}) {
 
     return (
         <>
@@ -46,10 +48,11 @@ function Perguntas() {
                 {
                     perguntas.map((card, index) => {
 
-                        return <PerguntasEstados index={index + 1} descricao={card.pergunta} resposta={card.resposta} key={card.pergunta} />
+                        return <PerguntasEstados index={index + 1} descricao={card.pergunta} resposta={card.resposta} key={card.pergunta} total={total} setTotal={setTotal}/>
                     })
                 }
             </main >
+
         </>
     );
 }

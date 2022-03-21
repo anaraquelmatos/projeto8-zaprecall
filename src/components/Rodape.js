@@ -1,7 +1,6 @@
 function Rodape({total}) {
-
-    total = 0;
     
+
     return (
         <footer>
             <div className="rodape-conteudo">

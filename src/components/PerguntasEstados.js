@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PerguntasEstados({ pergunta, index, descricao, resposta }) {
+function PerguntasEstados({ pergunta, index, descricao, resposta, total, setTotal }) {
 
     const [estado, setEstado] = useState("visivel");
     const [selecionado, setSelecionado] = useState(false);
@@ -32,13 +32,22 @@ function PerguntasEstados({ pergunta, index, descricao, resposta }) {
                 <p className="pergunta">{resposta}</p>
                 <div className="caixa-pergunta-visivel-botoes" >
                     <div className="botao-vermelho" onClick={() => setEstado("fechadoVermelho")}>
-                        <button className={vermelho} onClick={() => { setSelecionado(!selecionado) }}>Não lembrei</button>
+                        <button className={vermelho} onClick={() => {
+                            setSelecionado(!selecionado)
+                            setTotal(total + 1)
+                        }}>Não lembrei</button>
                     </div>
                     <div className="botao-alaranjado" onClick={() => setEstado("fechadoLaranja")}>
-                        <button className={laranja} onClick={() => { setSelecionado(!selecionado) }}>Quase não lembrei</button>
+                        <button className={laranja} onClick={() => {
+                            setSelecionado(!selecionado)
+                            setTotal(total + 1)
+                        }}>Quase não lembrei</button>
                     </div>
                     <div className="botao-verde" onClick={() => setEstado("fechadoVerde")}>
-                        <button className={verde} onClick={() => { setSelecionado(!selecionado) }}>Zap!</button>
+                        <button className={verde} onClick={() => {
+                            setSelecionado(!selecionado)
+                            setTotal(total + 1)
+                        }}>Zap!</button>
                     </div>
                 </div>
             </div>

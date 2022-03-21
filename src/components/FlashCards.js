@@ -11,9 +11,9 @@ function FlashCards() {
         <>
             <Cabecalho />
             <div className="tela">
-                <Perguntas />
+                <Perguntas total={total} setTotal={setTotal}/>
             </div>
-            <Rodape />
+            <Rodape total={total}/>
         </>
     );
 
